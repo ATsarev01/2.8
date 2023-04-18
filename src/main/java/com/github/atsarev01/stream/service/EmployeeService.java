@@ -13,11 +13,7 @@ public class EmployeeService {
 
     private static final int SIZE = 3;
 
-    private Map <String, Employee> employees;
-
-    public EmployeeService() {
-        this.employees = new HashMap<>();
-    }
+    private final Map <String, Employee> employees = new HashMap<>();
 
     private String getKey(String firstName, String lastName) {
         return firstName + "|" + lastName;
@@ -52,12 +48,7 @@ public class EmployeeService {
 
     }
 
-    public Collection<Employee> employees() {
-        return Collections.unmodifiableCollection(employees.values());
-    }
-
     public List<Employee> getAll() {
         return new ArrayList<>(employees.values());
     }
-
 }

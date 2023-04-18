@@ -63,7 +63,7 @@ public class DepartmentService {
     public List<Employee> getAllEmployeesFromDepartment(int department) {
         return employeeService.getAll().stream()
                 .filter(employee -> employee.getDepartment() == department)
-                .collect(null);
+                .collect(Collectors.toList());
     }
 }
 

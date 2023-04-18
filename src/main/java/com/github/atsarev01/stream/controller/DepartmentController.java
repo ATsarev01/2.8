@@ -31,14 +31,13 @@ public class DepartmentController {
             @RequestParam("departmentId") int department) {
         return departmentService.findEmployeeWithMinSalaryFromDepartment(department);
     }
-    @GetMapping(value = "/all", params = "department")
+    @GetMapping(value = "/all", params = "departmentId")
     public List<Employee> findEmployeesFromDepartment(
             @RequestParam("departmentId") int department) {
         return departmentService.getAllEmployeesFromDepartment(department);
     }
     @GetMapping(value = "/all")
-    public Map<Integer, List<Employee>> findEmployees(
-            @RequestParam("departmentId") int department) {
+    public Map<Integer, List<Employee>> findEmployees() {
         return departmentService.getEmployeesByDepartment();
     }
 
